@@ -114,53 +114,8 @@ export default function Navigation() {
           </h1>
         </div>
 
-        {/* Bottom Row - Navigation Links */}
-        <div className="flex h-16 items-center justify-center space-x-2">
-          {navItems.map((item) => {
-            const isActive = pathname === item.href;
-            const Icon = item.icon;
-            return (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`group flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium transition-all duration-200 ${
-                  isActive
-                    ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/25"
-                    : "text-gray-400 dark:text-gray-400 light:text-gray-600 hover:bg-gray-800/50 dark:hover:bg-gray-800/50 light:hover:bg-gray-200/50 hover:text-white dark:hover:text-white light:hover:text-gray-900"
-                }`}
-              >
-                <Icon />
-                <span>{item.name}</span>
-              </Link>
-            );
-          })}
-          <Link
-            href="/profile"
-            className={`group flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium transition-all duration-200 ${
-              pathname === "/profile"
-                ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/25"
-                : "text-gray-400 dark:text-gray-400 light:text-gray-600 hover:bg-gray-800/50 dark:hover:bg-gray-800/50 light:hover:bg-gray-200/50 hover:text-white dark:hover:text-white light:hover:text-gray-900"
-            }`}
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-            </svg>
-            <span>Profile</span>
-          </Link>
-          
-          {/* AI Features Link */}
-          <Link
-            href="/ai"
-            className={`group flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium transition-all duration-200 ${
-              pathname?.startsWith("/ai")
-                ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/25"
-                : "text-gray-400 dark:text-gray-400 light:text-gray-600 hover:bg-gray-800/50 dark:hover:bg-gray-800/50 light:hover:bg-gray-200/50 hover:text-white dark:hover:text-white light:hover:text-gray-900"
-            }`}
-          >
-            <AIIcon />
-            <span className="hidden sm:inline">AI</span>
-          </Link>
-        </div>
+        {/* Bottom Row - Removed navigation links (moved to floating menu) */}
+        {/* Navigation items are now accessible via the floating menu button */}
       </div>
     </nav>
   );
